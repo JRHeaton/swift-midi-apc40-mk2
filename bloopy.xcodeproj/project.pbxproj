@@ -7,28 +7,53 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		09B3156C19BA9C680005CEDD /* bloopy.h in Headers */ = {isa = PBXBuildFile; fileRef = 09B3156B19BA9C680005CEDD /* bloopy.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		09B3157619BA9C680005CEDD /* bloopyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B3157519BA9C680005CEDD /* bloopyTests.swift */; };
+		0944146119BA9CA200C66623 /* bloopy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0944146019BA9CA200C66623 /* bloopy.swift */; };
+		0944146919BA9FEB00C66623 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0944146819BA9FEB00C66623 /* main.swift */; };
+		09B3CE3319BBB6EE00A7B919 /* bridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 09B3CE3119BBB6EE00A7B919 /* bridge.m */; };
+		09B3CE3419BBB6EE00A7B919 /* bridge.h in Headers */ = {isa = PBXBuildFile; fileRef = 09B3CE3219BBB6EE00A7B919 /* bridge.h */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		0944146D19BAA05E00C66623 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 09B3155D19BA9C680005CEDD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 09B3156519BA9C680005CEDD;
+			remoteInfo = bloopy;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		0944146419BA9FEB00C66623 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		0944146019BA9CA200C66623 /* bloopy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = bloopy.swift; sourceTree = "<group>"; };
+		0944146619BA9FEB00C66623 /* bloopycli */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = bloopycli; sourceTree = BUILT_PRODUCTS_DIR; };
+		0944146819BA9FEB00C66623 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		09B3156619BA9C680005CEDD /* bloopy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = bloopy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		09B3156A19BA9C680005CEDD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		09B3156B19BA9C680005CEDD /* bloopy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bloopy.h; sourceTree = "<group>"; };
-		09B3157119BA9C680005CEDD /* bloopyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = bloopyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		09B3157419BA9C680005CEDD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		09B3157519BA9C680005CEDD /* bloopyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bloopyTests.swift; sourceTree = "<group>"; };
+		09B3CE3119BBB6EE00A7B919 /* bridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = bridge.m; sourceTree = "<group>"; };
+		09B3CE3219BBB6EE00A7B919 /* bridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bridge.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		09B3156219BA9C680005CEDD /* Frameworks */ = {
+		0944146319BA9FEB00C66623 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		09B3156E19BA9C680005CEDD /* Frameworks */ = {
+		09B3156219BA9C680005CEDD /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -38,11 +63,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0944146719BA9FEB00C66623 /* bloopycli */ = {
+			isa = PBXGroup;
+			children = (
+				0944146819BA9FEB00C66623 /* main.swift */,
+			);
+			path = bloopycli;
+			sourceTree = "<group>";
+		};
 		09B3155C19BA9C680005CEDD = {
 			isa = PBXGroup;
 			children = (
 				09B3156819BA9C680005CEDD /* bloopy */,
-				09B3157219BA9C680005CEDD /* bloopyTests */,
+				0944146719BA9FEB00C66623 /* bloopycli */,
 				09B3156719BA9C680005CEDD /* Products */,
 			);
 			sourceTree = "<group>";
@@ -51,7 +84,7 @@
 			isa = PBXGroup;
 			children = (
 				09B3156619BA9C680005CEDD /* bloopy.framework */,
-				09B3157119BA9C680005CEDD /* bloopyTests.xctest */,
+				0944146619BA9FEB00C66623 /* bloopycli */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -59,7 +92,9 @@
 		09B3156819BA9C680005CEDD /* bloopy */ = {
 			isa = PBXGroup;
 			children = (
-				09B3156B19BA9C680005CEDD /* bloopy.h */,
+				0944146019BA9CA200C66623 /* bloopy.swift */,
+				09B3CE3119BBB6EE00A7B919 /* bridge.m */,
+				09B3CE3219BBB6EE00A7B919 /* bridge.h */,
 				09B3156919BA9C680005CEDD /* Supporting Files */,
 			);
 			path = bloopy;
@@ -73,23 +108,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		09B3157219BA9C680005CEDD /* bloopyTests */ = {
-			isa = PBXGroup;
-			children = (
-				09B3157519BA9C680005CEDD /* bloopyTests.swift */,
-				09B3157319BA9C680005CEDD /* Supporting Files */,
-			);
-			path = bloopyTests;
-			sourceTree = "<group>";
-		};
-		09B3157319BA9C680005CEDD /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				09B3157419BA9C680005CEDD /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -97,13 +115,31 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				09B3156C19BA9C680005CEDD /* bloopy.h in Headers */,
+				09B3CE3419BBB6EE00A7B919 /* bridge.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		0944146519BA9FEB00C66623 /* bloopycli */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0944146A19BA9FEB00C66623 /* Build configuration list for PBXNativeTarget "bloopycli" */;
+			buildPhases = (
+				0944146219BA9FEB00C66623 /* Sources */,
+				0944146319BA9FEB00C66623 /* Frameworks */,
+				0944146419BA9FEB00C66623 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0944146E19BAA05E00C66623 /* PBXTargetDependency */,
+			);
+			name = bloopycli;
+			productName = bloopycli;
+			productReference = 0944146619BA9FEB00C66623 /* bloopycli */;
+			productType = "com.apple.product-type.tool";
+		};
 		09B3156519BA9C680005CEDD /* bloopy */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 09B3157919BA9C680005CEDD /* Build configuration list for PBXNativeTarget "bloopy" */;
@@ -122,23 +158,6 @@
 			productReference = 09B3156619BA9C680005CEDD /* bloopy.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		09B3157019BA9C680005CEDD /* bloopyTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 09B3157C19BA9C680005CEDD /* Build configuration list for PBXNativeTarget "bloopyTests" */;
-			buildPhases = (
-				09B3156D19BA9C680005CEDD /* Sources */,
-				09B3156E19BA9C680005CEDD /* Frameworks */,
-				09B3156F19BA9C680005CEDD /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = bloopyTests;
-			productName = bloopyTests;
-			productReference = 09B3157119BA9C680005CEDD /* bloopyTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -148,10 +167,10 @@
 				LastUpgradeCheck = 0600;
 				ORGANIZATIONNAME = "John Heaton";
 				TargetAttributes = {
-					09B3156519BA9C680005CEDD = {
+					0944146519BA9FEB00C66623 = {
 						CreatedOnToolsVersion = 6.0;
 					};
-					09B3157019BA9C680005CEDD = {
+					09B3156519BA9C680005CEDD = {
 						CreatedOnToolsVersion = 6.0;
 					};
 				};
@@ -169,7 +188,7 @@
 			projectRoot = "";
 			targets = (
 				09B3156519BA9C680005CEDD /* bloopy */,
-				09B3157019BA9C680005CEDD /* bloopyTests */,
+				0944146519BA9FEB00C66623 /* bloopycli */,
 			);
 		};
 /* End PBXProject section */
@@ -182,34 +201,57 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		09B3156F19BA9C680005CEDD /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		0944146219BA9FEB00C66623 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0944146919BA9FEB00C66623 /* main.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		09B3156119BA9C680005CEDD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		09B3156D19BA9C680005CEDD /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				09B3157619BA9C680005CEDD /* bloopyTests.swift in Sources */,
+				09B3CE3319BBB6EE00A7B919 /* bridge.m in Sources */,
+				0944146119BA9CA200C66623 /* bloopy.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		0944146E19BAA05E00C66623 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 09B3156519BA9C680005CEDD /* bloopy */;
+			targetProxy = 0944146D19BAA05E00C66623 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		0944146B19BA9FEB00C66623 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+			};
+			name = Debug;
+		};
+		0944146C19BA9FEB00C66623 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+			};
+			name = Release;
+		};
 		09B3157719BA9C680005CEDD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -294,6 +336,7 @@
 		09B3157A19BA9C680005CEDD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -305,12 +348,15 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/$(TARGET_NAME)/bridge.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		09B3157B19BA9C680005CEDD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -322,44 +368,22 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
-		09B3157D19BA9C680005CEDD /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = bloopyTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Debug;
-		};
-		09B3157E19BA9C680005CEDD /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = bloopyTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/$(TARGET_NAME)/bridge.h";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		0944146A19BA9FEB00C66623 /* Build configuration list for PBXNativeTarget "bloopycli" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0944146B19BA9FEB00C66623 /* Debug */,
+				0944146C19BA9FEB00C66623 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		09B3156019BA9C680005CEDD /* Build configuration list for PBXProject "bloopy" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -376,14 +400,7 @@
 				09B3157B19BA9C680005CEDD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-		};
-		09B3157C19BA9C680005CEDD /* Build configuration list for PBXNativeTarget "bloopyTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				09B3157D19BA9C680005CEDD /* Debug */,
-				09B3157E19BA9C680005CEDD /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
