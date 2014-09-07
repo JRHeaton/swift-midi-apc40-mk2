@@ -18,17 +18,12 @@ var inp = client.firstInputPort() { s, d1, d2 in
  	println("status=\(s), d1=\(d1), d2=\(d2)")
     
     switch s {
-    case 180: break
     case 181:
         tv.setState(["hue":Int(Int(d2) * (65000 / 127))])
         window.setState(["hue":Int(Int(d2) * (65000 / 127))])
-
-        break
     case 182:
 		tv.setState(["sat":Int(d2 * 2)])
         window.setState(["sat":Int(d2 * 2)])
-        
-        break
     case 183:
         if d2 == 0 {
             window.off()
@@ -40,8 +35,6 @@ var inp = client.firstInputPort() { s, d1, d2 in
             window.setBrightness(d2 * 2)
             tv.setBrightness(d2 * 2)
         }
-        
-        break
     default: break
     }
 }
