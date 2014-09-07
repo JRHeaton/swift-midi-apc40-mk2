@@ -11,6 +11,7 @@
 		0944146919BA9FEB00C66623 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0944146819BA9FEB00C66623 /* main.swift */; };
 		09B3CE3319BBB6EE00A7B919 /* bridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 09B3CE3119BBB6EE00A7B919 /* bridge.m */; };
 		09B3CE3419BBB6EE00A7B919 /* bridge.h in Headers */ = {isa = PBXBuildFile; fileRef = 09B3CE3219BBB6EE00A7B919 /* bridge.h */; };
+		09B3CE3619BBE6C900A7B919 /* Hue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B3CE3519BBE6C900A7B919 /* Hue.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +44,7 @@
 		09B3156A19BA9C680005CEDD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		09B3CE3119BBB6EE00A7B919 /* bridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = bridge.m; sourceTree = "<group>"; };
 		09B3CE3219BBB6EE00A7B919 /* bridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bridge.h; sourceTree = "<group>"; };
+		09B3CE3519BBE6C900A7B919 /* Hue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hue.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 			isa = PBXGroup;
 			children = (
 				0944146819BA9FEB00C66623 /* main.swift */,
+				09B3CE3519BBE6C900A7B919 /* Hue.swift */,
 			);
 			path = bloopycli;
 			sourceTree = "<group>";
@@ -208,6 +211,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09B3CE3619BBE6C900A7B919 /* Hue.swift in Sources */,
 				0944146919BA9FEB00C66623 /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
