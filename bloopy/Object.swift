@@ -27,7 +27,19 @@ extension MIDI {
         return nil
     }
     
+    public static func integerProperty<T: MIDIObject>(object: T, name: CFString) -> Int? {
+        var ret: Int32 = 0
+        if MIDIObjectGetIntegerProperty(object.ref, name, &ret) == 0 {
+			return Int(ret)
+        }
+        return nil
+    }
+    
     public static func name<T: MIDIObject>(object: T) -> String {
         return stringProperty(object, name: kMIDIPropertyName)!
+    }
+    
+    public static func online<T: MIDIObject>(object: T) -> Bool {
+        return integerProperty(object, name: kMIDIPropertyOffline)! == 0
     }
 }

@@ -41,7 +41,8 @@ extension MIDI {
         public mutating func createInputPort(name: String) -> InputPort? {
             var port: InputPort? = nil
             var portRef = _createInputPort(ref, name as NSString as CFString) { buf, len in
-				println("Input")
+                let msg = (buf[0], buf[1], buf[2])
+				port?.channelVoiceHandler?(msg.0, msg.1, msg.2)
             }
             
             if portRef != 0 {

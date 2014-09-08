@@ -14,6 +14,7 @@
 		094E094219BD3876000395C8 /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094E094119BD3876000395C8 /* Entity.swift */; };
 		094E094419BD3ADF000395C8 /* InputPort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094E094319BD3ADF000395C8 /* InputPort.swift */; };
 		094E094619BD432D000395C8 /* OutputPort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094E094519BD432D000395C8 /* OutputPort.swift */; };
+		094E094819BD59AF000395C8 /* ClientDependentInitialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094E094719BD59AF000395C8 /* ClientDependentInitialization.swift */; };
 		09B3CE3319BBB6EE00A7B919 /* bridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 09B3CE3119BBB6EE00A7B919 /* bridge.m */; };
 		09B3CE3419BBB6EE00A7B919 /* bridge.h in Headers */ = {isa = PBXBuildFile; fileRef = 09B3CE3219BBB6EE00A7B919 /* bridge.h */; };
 		09B3CE3619BBE6C900A7B919 /* Hue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B3CE3519BBE6C900A7B919 /* Hue.swift */; };
@@ -55,6 +56,7 @@
 		094E094119BD3876000395C8 /* Entity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Entity.swift; sourceTree = "<group>"; };
 		094E094319BD3ADF000395C8 /* InputPort.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputPort.swift; sourceTree = "<group>"; };
 		094E094519BD432D000395C8 /* OutputPort.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OutputPort.swift; sourceTree = "<group>"; };
+		094E094719BD59AF000395C8 /* ClientDependentInitialization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClientDependentInitialization.swift; sourceTree = "<group>"; };
 		09B3156619BA9C680005CEDD /* bloopy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = bloopy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		09B3156A19BA9C680005CEDD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		09B3CE3119BBB6EE00A7B919 /* bridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = bridge.m; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 				094E094119BD3876000395C8 /* Entity.swift */,
 				09B3CE3B19BD35F500A7B919 /* Client.swift */,
 				094E094319BD3ADF000395C8 /* InputPort.swift */,
+				094E094719BD59AF000395C8 /* ClientDependentInitialization.swift */,
 				094E094519BD432D000395C8 /* OutputPort.swift */,
 				09B3CE3D19BD361000A7B919 /* Destination.swift */,
 				09B3CE3F19BD362100A7B919 /* Source.swift */,
@@ -253,6 +256,7 @@
 				09B3CE3819BD35B400A7B919 /* Device.swift in Sources */,
 				09B3CE3319BBB6EE00A7B919 /* bridge.m in Sources */,
 				09B3CE3E19BD361000A7B919 /* Destination.swift in Sources */,
+				094E094819BD59AF000395C8 /* ClientDependentInitialization.swift in Sources */,
 				09B3CE4019BD362100A7B919 /* Source.swift in Sources */,
 				094E093E19BD371A000395C8 /* EnumerableObject.swift in Sources */,
 				094E094619BD432D000395C8 /* OutputPort.swift in Sources */,

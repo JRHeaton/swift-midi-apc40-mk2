@@ -37,15 +37,15 @@ extension MIDI {
         return ret
     }
     
-    public static func firstNamed<T: MIDIEnumerableObject>(name: String) -> T? {
+    public static func firstNamed<T: MIDIEnumerableObject>(name: String, requireOnline: Bool = true) -> T? {
         return firstMeetingCriteria { (obj: T) -> Bool in
-            return MIDI.name(obj) == name
+            return MIDI.name(obj) == name && (!requireOnline || MIDI.online(obj))
         }
     }
     
-    public static func firstContainingName<T: MIDIEnumerableObject>(namePart: String) -> T? {
+    public static func firstContainingName<T: MIDIEnumerableObject>(namePart: String, requireOnline: Bool = true) -> T? {
         return firstMeetingCriteria { (obj: T) -> Bool in
-            return (MIDI.name(obj) as NSString).containsString(namePart)
+            return (MIDI.name(obj) as NSString).containsString(namePart) && (!requireOnline || MIDI.online(obj))
         }
     }
 }

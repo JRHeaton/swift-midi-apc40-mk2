@@ -7,15 +7,19 @@
 //
 
 extension MIDI {
-    public struct InputPort: MIDIObject, Printable {
+    public struct InputPort: MIDIObject, Printable, NamedClientDependentInitialization {
         public let ref: MIDIPortRef
         
-        public typealias MessageHandler = (MIDIMessage) -> ()
-        public var messageHandler: MessageHandler?
+        public typealias ChannelVoiceHandler = (UInt8, UInt8, UInt8) -> ()
+        public var channelVoiceHandler: ChannelVoiceHandler?
         
-        init(ref: MIDIPortRef, messageHandler: MessageHandler? = nil) {
+        init(ref: MIDIPortRef, channelVoiceHandler: ChannelVoiceHandler? = nil) {
             self.ref = ref
-            self.messageHandler = messageHandler
+            self.channelVoiceHandler = channelVoiceHandler
+        }
+        
+        init(client: MIDI.Client, name: String) {
+            
         }
         
         // Connecting sources
