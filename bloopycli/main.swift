@@ -13,31 +13,12 @@ var tv 		= Light(location: .TV)
 var window 	= Light(location: .Window)
 
 var client = MIDI.Client(name: "Default")
-var outp = client.firstOutputPort()
-var inp = client.firstInputPort() { s, d1, d2 in
- 	println("status=\(s), d1=\(d1), d2=\(d2)")
-    
-    switch s {
-    case 181:
-        tv.setState(["hue":Int(Int(d2) * (65000 / 127))])
-        window.setState(["hue":Int(Int(d2) * (65000 / 127))])
-    case 182:
-		tv.setState(["sat":Int(d2 * 2)])
-        window.setState(["sat":Int(d2 * 2)])
-    case 183:
-        if d2 == 0 {
-            window.off()
-            tv.off()
-        } else {
-            window.on()
-            tv.on()
-            
-            window.setBrightness(d2 * 2)
-            tv.setBrightness(d2 * 2)
-        }
-    default: break
-    }
-}
+var outp = client.firstOutputPort()!
+var inp = client.firstInputPort()!
+
+println(client)
+println(outp)
+println(inp)
 
 struct APCMessage: MIDIMessage {
     let status, data1, data2: UInt8
@@ -54,18 +35,19 @@ struct APCConnection {
     subscript (x: UInt8, y: UInt8) -> UInt8 {
         get { return 0 }
         set {
-            dest.send(client.firstOutputPort(), message: APCMessage.padOn(x: x, y: y, velocity: newValue))
+//            dest.sendChannelVoice(outp, message: APCMessage.padOn(x: x, y: y, velocity: newValue))
         }
     }
 }
 
 if let source: MIDI.Source = MIDI.firstNamed("APC40 mkII") {
-    source.connectToInputPort(inp)
+    inp.connectSource(source)
 }
 
 if let dest: MIDI.Destination = MIDI.firstNamed("APC40 mkII") {
     var apc = APCConnection(client: client, dest: dest)
-    apc[0, 0] = 20
+    dest.sendChannelVoice(outp, status: 0x90, data1: 0x16, data2: 110)
+//    apc[0, 0] = 65
 }
 
 CFRunLoopRun()

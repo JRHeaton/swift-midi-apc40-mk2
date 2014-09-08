@@ -22,12 +22,20 @@ void sendMIDIChannel(MIDIEndpointRef dest, MIDIPortRef outPort, UInt8 status, UI
     MIDISend(outPort, dest, &list);
 }
 
-static void _bloopyReadProc(const MIDIPacketList *pktlist, void *readProcRefCon, void *srcConnRefCon) {
-    void (^closure)(UInt8 status, UInt8 d1, UInt8 d2) = (__bridge void (^)(UInt8, UInt8, UInt8))readProcRefCon;
-    closure(pktlist->packet[0].data[0],pktlist->packet[0].data[1],pktlist->packet[0].data[2]);
+static void _bloopyReadProc(const MIDIPacketList *packetList, void *readProcRefCon, void *srcConnRefCon) {
+    void (^closure)(UInt8 *, UInt16) = (__bridge void (^)(UInt8*, UInt16))readProcRefCon;
+    if (!closure) return;
+    
+    const MIDIPacket *packet = &packetList->packet[0];
+    for (int i=0;i<packetList->numPackets;++i) {
+        UInt8 *buf = (UInt8 *)packet->data;
+        closure(buf, packet->length);
+        
+        packet = MIDIPacketNext(packet);
+    }
 }
 
-MIDIPortRef _createInputPort(MIDIClientRef client, CFStringRef name, void (^closure)(UInt8 status, UInt8 d1, UInt8 d2)) {
+MIDIPortRef _createInputPort(MIDIClientRef client, CFStringRef name, void (^closure)(UInt8 *, UInt16)) {
     MIDIPortRef ret;
     MIDIInputPortCreate(client, name, _bloopyReadProc, (__bridge_retained void *)closure, &ret);
     return ret;
