@@ -7,12 +7,12 @@
 //
 
 extension MIDI {
-    public struct OutputPort: MIDIObject, Printable {
+    public struct OutputPort: MIDIObject, Printable, MIDIDisposable {
         public let ref: MIDIPortRef
         
         // Disposing
-        public func dispose() {
-            MIDIPortDispose(ref)
+        public func dispose() -> Bool {
+            return MIDIPortDispose(ref) == 0
         }
         
         // Printing

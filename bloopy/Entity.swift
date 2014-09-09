@@ -22,8 +22,8 @@ extension MIDI {
         public subscript (index: Int) -> Source? {
             return sourceAtIndex(index)
         }
-        public var sources: [MIDI.Source] {
-            var ret: [MIDI.Source] = []
+        public var sources: [Source] {
+            var ret: [Source] = []
             for i in 0..<numberOfSources {
                 if let src = sourceAtIndex(i) {
                     ret.append(src)
@@ -42,8 +42,8 @@ extension MIDI {
         public subscript (index: Int) -> Destination? {
             return destinationAtIndex(index)
         }
-        public var destinations: [MIDI.Destination] {
-            var ret: [MIDI.Destination] = []
+        public var destinations: [Destination] {
+            var ret: [Destination] = []
             for i in 0..<numberOfDestinations {
                 if let dest = destinationAtIndex(i) {
                     ret.append(dest)

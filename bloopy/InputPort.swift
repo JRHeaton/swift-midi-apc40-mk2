@@ -7,7 +7,7 @@
 //
 
 extension MIDI {
-    public struct InputPort: MIDIObject, Printable, NamedClientDependentInitialization {
+    public struct InputPort: MIDIObject, Printable, MIDIDisposable {
         public let ref: MIDIPortRef
         
         public typealias ChannelVoiceHandler = (UInt8, UInt8, UInt8) -> ()
@@ -18,18 +18,14 @@ extension MIDI {
             self.channelVoiceHandler = channelVoiceHandler
         }
         
-        init(client: MIDI.Client, name: String) {
-            
-        }
-        
         // Connecting sources
-        public func connectSource(source: Source) {
-            MIDIPortConnectSource(ref, source.ref, nil)
+        public func connectSource(source: Source) -> Bool {
+            return MIDIPortConnectSource(ref, source.ref, nil) == 0
         }
         
         // Disposing
-        public func dispose() {
-            MIDIPortDispose(ref)
+        public func dispose() -> Bool {
+            return MIDIPortDispose(ref) == 0
         }
         
         // Printing

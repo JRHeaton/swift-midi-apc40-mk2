@@ -9,7 +9,7 @@
 import Foundation
 
 extension MIDI {
-    public struct Client: MIDIObject {
+    public struct Client: MIDIObject, MIDIDisposable {
         public var ref: MIDIClientRef = 0
         public var outputPorts = [OutputPort]()
         public var inputPorts = [InputPort]()
@@ -58,6 +58,11 @@ extension MIDI {
             }
             
             return inputPorts.first
+        }
+        
+        // Disposing
+        public func dispose() -> Bool {
+            return MIDIClientDispose(ref) == 0
         }
     }
 }

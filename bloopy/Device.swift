@@ -7,7 +7,7 @@
 //
 
 extension MIDI {
-    public struct Device: MIDIEnumerableObject, Printable {
+    public struct Device: MIDIEnumerableObject, Printable, MIDIDisposable {
         public let ref: MIDIDeviceRef
         
         // Enumeration
@@ -27,6 +27,20 @@ extension MIDI {
         }
         public subscript (index: Int) -> Entity? {
             return entityAtIndex(index)
+        }
+        public var entities: [Entity] {
+            var ret: [Entity] = []
+            for i in 0..<numberOfEntities {
+                if let dest = entityAtIndex(i) {
+                    ret.append(dest)
+                }
+            }
+            return ret
+        }
+        
+        // Disposing
+        public func dispose() -> Bool {
+            return MIDIDeviceDispose(ref) == 0
         }
         
         // Printing

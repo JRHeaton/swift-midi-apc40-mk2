@@ -7,7 +7,7 @@
 //
 
 extension MIDI {
-    public struct Source: MIDIEnumerableObject, Printable {
+    public struct Source: MIDIEnumerableObject, Printable, MIDIDisposable {
         public let ref: MIDIEndpointRef
         
         // Enumeration
@@ -19,8 +19,8 @@ extension MIDI {
         }
         
         // Disposing
-        public func dispose() {
-            MIDIEndpointDispose(ref)
+        public func dispose() -> Bool {
+            return MIDIEndpointDispose(ref) == 0
         }
         
         // Printing
