@@ -8,18 +8,19 @@
 
 #include "bridge.h"
 
-void sendMIDIChannel(MIDIEndpointRef dest, MIDIPortRef outPort, UInt8 status, UInt8 d1, UInt8 d2) {
+void sendMIDIBytes(MIDIEndpointRef dest, MIDIPortRef outPort, UInt8 *bytes, UInt16 len) {
     MIDIPacketList list;
     memset(&list, 0, sizeof(list));
     
     list.numPackets = 1;
-    list.packet[0].length = 3;
+    list.packet[0].length = len;
     list.packet[0].timeStamp = 0;
-    list.packet[0].data[0] = status;
-    list.packet[0].data[1] = d1;
-    list.packet[0].data[2] = d2;
+    
+#define MIN(a, b) ((a) < (b) ? (a) : (b))
+    memcpy(list.packet[0].data, bytes, MIN(sizeof(list.packet[0].data), len));
     
     MIDISend(outPort, dest, &list);
+    free(bytes);
 }
 
 static void _bloopyReadProc(const MIDIPacketList *packetList, void *readProcRefCon, void *srcConnRefCon) {

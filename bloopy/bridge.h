@@ -9,5 +9,5 @@
 #import <CoreMIDI/CoreMIDI.h>
 #import <CoreFoundation/CoreFoundation.h>
 
-void sendMIDIChannel(MIDIEndpointRef dest, MIDIPortRef outPort, UInt8 status, UInt8 d1, UInt8 d2);
+void sendMIDIBytes(MIDIEndpointRef dest, MIDIPortRef outPort, UInt8 *bytes, UInt16 len);
 MIDIPortRef _createInputPort(MIDIClientRef client, CFStringRef name, void (^closure)(UInt8 *buf, UInt16 len));

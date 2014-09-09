@@ -20,10 +20,10 @@ extension MIDI {
         
         // Message sending
         public func sendChannelVoice(outPort: OutputPort, status: UInt8, data1: UInt8, data2: UInt8) {
-            sendMIDIChannel(ref, outPort.ref, status, data1, data2)
+            sendMIDIBytes(ref, outPort.ref, [status, data1, data2], 3)
         }
-        public func sendMessage<T: MIDIMessage>(message: T, outPort: OutputPort) {
-            sendMIDIChannel(ref, outPort.ref, message.status, message.data1, message.data2)
+        public func sendBytes(outPort: OutputPort, bytes: UInt8...) {
+            sendMIDIBytes(ref, outPort.ref, UnsafeMutablePointer<UInt8>.fromArray(bytes), UInt16(bytes.count))
         }
         
         // Disposing

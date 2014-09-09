@@ -38,23 +38,14 @@ extension MIDI {
         }
         
         // Input ports
-        public mutating func createInputPort(name: String) -> InputPort? {
-            var port: InputPort? = nil
-            var portRef = _createInputPort(ref, name as NSString as CFString) { buf, len in
-                let msg = (buf[0], buf[1], buf[2])
-				port?.channelVoiceHandler?(msg.0, msg.1, msg.2)
-            }
-            
-            if portRef != 0 {
-                port = InputPort(ref: portRef)
-                inputPorts.append(port!)
-            }
-            
-            return port
+        public mutating func createInputPort(name: String, inputHandler: InputPort.InputHandler? = nil) -> InputPort? {
+            let p = InputPort(client: self, name: name, inputHandler: inputHandler)
+            inputPorts.append(p)
+            return p
         }
-        public mutating func firstInputPort() -> InputPort? {
+        public mutating func firstInputPort(inputHandler: InputPort.InputHandler? = nil) -> InputPort? {
             if inputPorts.count == 0 {
-                return createInputPort("First")
+                return createInputPort("First", inputHandler)
             }
             
             return inputPorts.first

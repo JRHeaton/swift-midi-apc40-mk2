@@ -6,17 +6,28 @@
 //  Copyright (c) 2014 John Heaton. All rights reserved.
 //
 
+import Foundation
+
 extension MIDI {
-    public struct InputPort: MIDIObject, Printable, MIDIDisposable {
+    public class InputPort: MIDIObject, Printable, MIDIDisposable {
         public let ref: MIDIPortRef
         
-        public typealias ChannelVoiceHandler = (UInt8, UInt8, UInt8) -> ()
-        public var channelVoiceHandler: ChannelVoiceHandler?
+        public typealias InputHandler = (data: UnsafePointer<UInt8>, length: UInt16) -> ()
+        public var inputHandler: InputHandler?
         
-        init(ref: MIDIPortRef, channelVoiceHandler: ChannelVoiceHandler? = nil) {
+        public init(ref: MIDIPortRef, inputHandler: InputHandler? = nil) {
             self.ref = ref
-            self.channelVoiceHandler = channelVoiceHandler
+            self.inputHandler = inputHandler
         }
+
+        public init(client: MIDI.Client, name: String, inputHandler: InputHandler? = nil) {
+            ref = 0
+            self.inputHandler = inputHandler
+            ref = _createInputPort(client.ref, name as NSString as CFString) { buf, len in
+                let b = UnsafePointer<UInt8>(buf)
+                self.inputHandler?(data: b, length: len)
+            }
+		}
         
         // Connecting sources
         public func connectSource(source: Source) -> Bool {
