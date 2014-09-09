@@ -40,7 +40,7 @@ if let apc: MIDI.Device = MIDI.firstContainingName("APC40", requireOnline: true)
                     } else {
                         println("applying hsb: (\(hue),\(sat),\(bri))")
                         light.on()
-                        light.setState(["hue":(Int(hue)*65000)/255,"sat":Int(sat),"bri":Int(bri)])
+                        light.setState(["hue":(Int(hue)*Int(UInt16.max))/255,"sat":Int(sat),"bri":Int(bri)])
                     }
                 }
             }

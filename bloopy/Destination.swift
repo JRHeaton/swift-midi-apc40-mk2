@@ -23,7 +23,7 @@ extension MIDI {
             sendMIDIBytes(ref, outPort.ref, [status, data1, data2], 3)
         }
         public func sendBytes(outPort: OutputPort, bytes: UInt8...) {
-            sendMIDIBytes(ref, outPort.ref, UnsafeMutablePointer<UInt8>.fromArray(bytes), UInt16(bytes.count))
+            sendMIDIBytes(ref, outPort.ref, bytes, UInt16(bytes.count))
         }
         
         // Disposing

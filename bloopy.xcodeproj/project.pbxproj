@@ -16,7 +16,6 @@
 		094E094619BD432D000395C8 /* OutputPort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094E094519BD432D000395C8 /* OutputPort.swift */; };
 		094E094819BD59AF000395C8 /* ClientDependentInitialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094E094719BD59AF000395C8 /* ClientDependentInitialization.swift */; };
 		0955EF6E19BE893200714312 /* Disposable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0955EF6D19BE893200714312 /* Disposable.swift */; };
-		0955EF7319BE9C6600714312 /* BufferArrayLiterals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0955EF7219BE9C6600714312 /* BufferArrayLiterals.swift */; };
 		09B3CE3319BBB6EE00A7B919 /* bridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 09B3CE3119BBB6EE00A7B919 /* bridge.m */; };
 		09B3CE3419BBB6EE00A7B919 /* bridge.h in Headers */ = {isa = PBXBuildFile; fileRef = 09B3CE3219BBB6EE00A7B919 /* bridge.h */; };
 		09B3CE3619BBE6C900A7B919 /* Hue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B3CE3519BBE6C900A7B919 /* Hue.swift */; };
@@ -60,7 +59,6 @@
 		094E094519BD432D000395C8 /* OutputPort.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OutputPort.swift; sourceTree = "<group>"; };
 		094E094719BD59AF000395C8 /* ClientDependentInitialization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClientDependentInitialization.swift; sourceTree = "<group>"; };
 		0955EF6D19BE893200714312 /* Disposable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Disposable.swift; sourceTree = "<group>"; };
-		0955EF7219BE9C6600714312 /* BufferArrayLiterals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BufferArrayLiterals.swift; sourceTree = "<group>"; };
 		09B3156619BA9C680005CEDD /* bloopy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = bloopy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		09B3156A19BA9C680005CEDD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		09B3CE3119BBB6EE00A7B919 /* bridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = bridge.m; sourceTree = "<group>"; };
@@ -164,7 +162,6 @@
 			isa = PBXGroup;
 			children = (
 				0944146019BA9CA200C66623 /* bloopy.swift */,
-				0955EF7219BE9C6600714312 /* BufferArrayLiterals.swift */,
 				0955EF6C19BE891400714312 /* Protocols */,
 				0955EF6F19BE8B2E00714312 /* Objects */,
 				09B3CE3119BBB6EE00A7B919 /* bridge.m */,
@@ -295,7 +292,6 @@
 				09B3CE3319BBB6EE00A7B919 /* bridge.m in Sources */,
 				09B3CE3E19BD361000A7B919 /* Destination.swift in Sources */,
 				094E094819BD59AF000395C8 /* ClientDependentInitialization.swift in Sources */,
-				0955EF7319BE9C6600714312 /* BufferArrayLiterals.swift in Sources */,
 				09B3CE4019BD362100A7B919 /* Source.swift in Sources */,
 				0955EF6E19BE893200714312 /* Disposable.swift in Sources */,
 				094E093E19BD371A000395C8 /* EnumerableObject.swift in Sources */,

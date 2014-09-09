@@ -8,7 +8,7 @@
 
 #include "bridge.h"
 
-void sendMIDIBytes(MIDIEndpointRef dest, MIDIPortRef outPort, UInt8 *bytes, UInt16 len) {
+void sendMIDIBytes(MIDIEndpointRef dest, MIDIPortRef outPort, const UInt8 *bytes, UInt16 len) {
     MIDIPacketList list;
     memset(&list, 0, sizeof(list));
     
@@ -20,7 +20,6 @@ void sendMIDIBytes(MIDIEndpointRef dest, MIDIPortRef outPort, UInt8 *bytes, UInt
     memcpy(list.packet[0].data, bytes, MIN(sizeof(list.packet[0].data), len));
     
     MIDISend(outPort, dest, &list);
-    free(bytes);
 }
 
 static void _bloopyReadProc(const MIDIPacketList *packetList, void *readProcRefCon, void *srcConnRefCon) {
